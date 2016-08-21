@@ -11,11 +11,11 @@
     <form class="ui form" id="app-form" method="post">
       <div class="field">
         <label>Your URL</label>
-        <input type="text" id="url" name="url" placeholder="URL">
+        <input type="text" id="url" name="url" placeholder="URL" value="https://google.com">
       </div>
       <div class="field">
         <label>App name</label>
-        <input type="text" id="name" name="app-name" placeholder="App Name">
+        <input type="text" id="name" name="app-name" placeholder="App Name" value="Google">
       </div>
       <div>
         <label>Operating system:</label>
@@ -33,9 +33,10 @@
       $(document).ready(function () {
         $("form").submit(function () {
           var url = document.getElementById("url").value;
+          url = encodeURIComponent(url);
           var name = document.getElementById("name").value;
           var os = document.getElementById("os").value;
-          $.get('/download/' + name + '/' + url + '/' + os);
+          $.get('/download?name=' + name + '&os=' + os + '&url=' +  url );
           // Prevent screen refresh on submit
           return false;
         })
