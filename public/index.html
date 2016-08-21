@@ -31,6 +31,9 @@
     </form>
     <script>
       $(document).ready(function () {
+        // Autofill
+        $('#url').val("https://google.com");
+        $('#name').val("Google.com");
         $("form").submit(function () {
           var url = document.getElementById("url").value;
           var name = document.getElementById("name").value;
