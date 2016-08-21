@@ -5,7 +5,7 @@ let win
 
 function createWindow () {
   win = new BrowserWindow({width: 800, height:600, webPreferences: {nodeIntegration: false}});
-  win.loadURL('https://www.evernote.com/')
+  win.loadURL('https://www.example.com/');
 
   win.on('closed', () => {
     win = null
